@@ -1,0 +1,74 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 text-center text-primary fw-bold fs-3">🚀 Welcome to SmartCourse Admin</h1>
+        <p class="text-center text-muted fs-6 mb-4">Manage your e-learning platform effortlessly.</p>
+
+        <div class="row mt-5 g-4" style="margin-top: -10px">
+            {% set courses = [
+                {"image": "angular.png", "title": "Frontend Development with Angular", "desc": "Build interactive user interfaces with Angular, HTML, CSS, and JavaScript.", "btn": "primary"},
+                {"image": "symfony.png", "title": "Backend Development with Symfony", "desc": "Master Symfony and PHP for server-side applications and databases.", "btn": "danger"},
+                {"image": "python.png", "title": "Fullstack Development with Python", "desc": "Develop fullstack applications using Python for backend and frontend technologies.", "btn": "success"},
+                {"image": "java.png", "title": "Fullstack Development with Java", "desc": "Become a fullstack developer using Java and Angular.", "btn": "warning"},
+                {"image": "docker.png", "title": "Docker & Containerization", "desc": "Learn how to containerize applications with Docker and orchestrate them with Kubernetes.", "btn": "info"},
+                {"image": "aws.png", "title": "Cloud Computing with AWS", "desc": "Deploy and manage cloud applications using AWS services. Explore EC2, S3, Lambda, and more.", "btn": "dark"}
+            ] %}
+
+            {% for course in courses %}
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 rounded-4 h-100">
+                        <img src="{{ asset('uploads/images/' ~ course.image) }}" class="card-img-top rounded-top-4" alt="{{ course.title }}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-{{ course.btn }} fw-bold">{{ course.title }}</h5>
+                            <p class="card-text">{{ course.desc }}</p>
+                            <a href="#" class="btn btn-{{ course.btn }} px-4 rounded-pill shadow-sm">
+                                <i class="fas fa-shopping-cart"></i> Buy the Course
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Custom CSS for hover effects -->
+        <style>
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                height: 100%;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .card-img-top {
+                width: auto;
+                height: 120px; /* Ensures all images are the same size */
+                object-fit: contain;
+                margin-top: 10px;
+            }
+
+
+            .card-text {
+                flex-grow: 1;
+            }
+
+
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .card-img-top {
+                    height: 100px;
+                }
+            }
+            h1 {
+                font-size: 1.8rem; /* Reduce from default size */
+            }
+
+        </style>
+    </div>
+{% endblock %}
