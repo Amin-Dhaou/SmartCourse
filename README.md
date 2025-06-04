@@ -38,52 +38,24 @@
 
 ### Installation
 
-# Cloner le dépôt
-git clone https://github.com/votre-utilisateur/smartcourse.git
-cd smartcourse
+- Cloner le dépôt : `git clone https://github.com/votre-utilisateur/smartcourse.git`  
+- Se déplacer dans le dossier : `cd smartcourse`  
+- Installer les dépendances PHP : `composer install`  
+- Configurer la base de données dans `.env` (à faire manuellement)  
+- Créer la base de données : `php bin/console doctrine:database:create`  
+- Lancer les migrations : `php bin/console doctrine:migrations:migrate`  
+- Installer les dépendances JS et compiler les assets (optionnel) : `npm install` puis `npm run dev`  
+- Lancer le serveur de développement Symfony : `symfony server:start -d`  
 
-# Installer les dépendances PHP
-composer install
-
-# Configurer la base de données dans .env (à faire manuellement)
-
-# Créer la base de données et lancer les migrations
-php bin/console doctrine:database:create
-php bin/console doctrine:migrations:migrate
-
-# Installer les dépendances JS et compiler les assets (optionnel)
-npm install
-npm run dev
-
-# Lancer le serveur de développement Symfony
-symfony server:start -d   
----
-![Screenshot 2025-06-04 232811](https://github.com/user-attachments/assets/5b4c6e6d-dd5b-401a-9724-5d378fa42716)
 ---
 
 ### Commandes Docker
 
-# Démarrer les conteneurs en arrière-plan
-docker-compose up -d
----
-![Screenshot 2025-06-04 232934](https://github.com/user-attachments/assets/4b5d1841-f41f-4e37-b083-591c1627f04b)
----
-# Voir les logs des conteneurs
-docker-compose logs -f
-
-# Accéder au conteneur PHP (app) pour exécuter des commandes
-docker exec -it smartcourse_app bash
-
-# Installer les dépendances PHP (dans le conteneur)
-composer install
-
-# Créer la base de données et lancer les migrations (dans le conteneur)
-php bin/console doctrine:database:create
-php bin/console doctrine:migrations:migrate
-
-# Arrêter les conteneurs
-docker-compose down
-
-# Supprimer les conteneurs, réseaux et volumes
-docker-compose down -v
-
+- Démarrer les conteneurs en arrière-plan : `docker-compose up -d`  
+- Voir les logs des conteneurs : `docker-compose logs -f`  
+- Accéder au conteneur PHP (app) pour exécuter des commandes : `docker exec -it smartcourse_app bash`  
+- Installer les dépendances PHP (dans le conteneur) : `composer install`  
+- Créer la base de données (dans le conteneur) : `php bin/console doctrine:database:create`  
+- Lancer les migrations (dans le conteneur) : `php bin/console doctrine:migrations:migrate`  
+- Arrêter les conteneurs : `docker-compose down`  
+- Supprimer conteneurs, réseaux et volumes : `docker-compose down -v`  
