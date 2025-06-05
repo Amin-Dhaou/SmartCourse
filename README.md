@@ -13,13 +13,6 @@
 - 📈 Suivi des progrès des apprenants  
 - 📄 Gestion des profils utilisateurs  
 
----
-![image](https://github.com/user-attachments/assets/390b54c0-bfb0-4e73-a748-3b9116ab786e)
----
-![Screenshot 2025-06-04 232811](https://github.com/user-attachments/assets/8c4321f1-a2ff-4bc6-9332-1d07db53c524)
----
-
-
 ## 🛠️ Technologies utilisées
 
 | Côté           | Technologie       |  
